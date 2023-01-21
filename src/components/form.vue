@@ -1,39 +1,42 @@
 <template>
   <div>
-    <img
-      style="height: 150px"
-      src="https://upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/1200px-MJU_LOGO.svg.png"
-      alt=""
-    />
-  </div>
-  <div>
     <form action="">
-      <div>วันที่ <input type="date" v-model="person.date" /></div>
+      <div>วันที่ <input type="date" v-model="person.Date" required /></div>
       <div>
-        ด้วยข้าพเจ้าสอบได้วุฒิ <input type="text" v-model="person.quation" />
+        ด้วยข้าพเจ้าสอบได้วุฒิ <input type="text" v-model="person.Quation" />
       </div>
       <div>
-        จากสถานศึกษา <input type="text" v-model="person.Univers" /> เมื่อ พ.ศ
-        <input type="number" v-model="person.year" />
+        จากสถานศึกษา <input type="text" v-model="person.University" /> เมื่อ พ.ศ
+        <input type="number" v-model="person.Year" />
       </div>
       <div>
-        มีความประสงค์จะขอใบเทียบวุฒิการศึกษาเท่า
-        <input type="text" v-model="person.want" />
+        <input type="text" v-model="person.Wish" />
       </div>
       <div>
         ของกระทรวงศึกษาธิการเพื่อ
-        <input type="text" v-model="person.T" /> โปรดพิจารณาข้าพเจ้าด้วย
+        <input type="text" v-model="person.To" /> โปรดพิจารณาข้าพเจ้าด้วย
       </div>
       <div>
         ที่อยู่ปัจจุบันของข้าพเจ้า บ้านเลขที่
-        <input type="text" v-model="person.As" /> เบอร์โทรติดต่อ
-        <input type="number" v-model="person.phone" />
+        <input type="text" v-model="person.Address" /> เบอร์โทรติดต่อ
+        <input type="number" v-model="person.Phone" />
       </div>
-      <div>ลงชื่อ <input type="text" v-model="person.name" /> (ผู้ขอเทียบ)</div>
+      <div>ลงชื่อ <input type="text" v-model="person.Name" /> (ผู้ขอเทียบ)</div>
     </form>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckChecked"
+        checked
+      />
+      <label class="form-check-label" for="flexCheckChecked">
+        ข้าพเจ้าได้ตรวจสอบข้อมูลเรียบร้อยแล้ว
+      </label>
+    </div>
     <div><button @click="awesome = !awesome">ส่ง</button></div>
-
-    <div v-if="awesome" >
+    <div v-if="awesome">
       <div v-for="(value, key, index) in person" :key="index">
         {{ key }}: {{ value }}
       </div>
@@ -42,16 +45,16 @@
 </template>
 <script setup>
 import { ref } from "vue";
-const awesome = ref(false)
+const awesome = ref(false);
 var person = ref({
-  date: "",
-  quation: "",
-  Univers: "",
-  year: "",
-  want: "",
-  T: "",
-  As: "",
-  phone: ""
+  Date: "",
+  Quation: "",
+  University: "",
+  Year: "",
+  Wish: "",
+  To: "",
+  Address: "",
+  Phone: "",
+  Name: "",
 });
-
 </script>

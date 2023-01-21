@@ -54,14 +54,4 @@ var person = ref({
   phone: "",
 });
 
-var show = ref([]);
-for (const key in person) {
-    if (Object.hasOwnProperty.call(person, key)) {
-        show = person[key];
-    }
-}
-console.log(show);
-function submit() {
-  cshow = false;
-}
 </script>

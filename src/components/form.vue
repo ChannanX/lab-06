@@ -51,7 +51,7 @@ var person = ref({
   want: "",
   T: "",
   As: "",
-  phone: "",
+  phone: ""
 });
 
 </script>
